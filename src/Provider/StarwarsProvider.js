@@ -5,12 +5,13 @@ import StarwarsContext from './Context';
 function StarwarsProvider({ children }) {
   const [planets, setPlanets] = useState([]); // armazena o retorno da api
   const [planetsCopia, setPlanetsCopia] = useState([]); // armazena uma copia do retorno da API
-  const contextValue = {
-    planets,
-    setPlanets,
-    planetsCopia,
-    setPlanetsCopia,
+
+  const filter = {
+    filterByName: {
+      name: '',
+    },
   };
+  const [filters, setFilters] = useState([filter]);
 
   const fetchPlanets = async () => {
     const fetchAPI = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
@@ -23,6 +24,14 @@ function StarwarsProvider({ children }) {
     fetchPlanets();
   }, []);
 
+  const contextValue = {
+    planets,
+    setPlanets,
+    planetsCopia,
+    setPlanetsCopia,
+    filters,
+    setFilters,
+  };
   return (
     <StarwarsContext.Provider value={ contextValue }>
       { children }
