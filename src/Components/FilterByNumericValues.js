@@ -4,7 +4,12 @@ import StarwarsContext from '../Provider/Context';
 export default function NumericFilter() {
   const { planets, setPlanetsCopia, filters, setFilters,
     column, setColumn, comparison, setComparison, valor,
-    setValor, options } = useContext(StarwarsContext);
+    setValor, options, setOptions } = useContext(StarwarsContext);
+
+  const columnOptions = () => {
+    const colOp = options.filter((option) => option !== column);
+    setOptions(colOp);
+  };
 
   const filterPlanetsByNumber = () => {
     const planetsByNumber = planets.filter((planet) => {
@@ -18,6 +23,7 @@ export default function NumericFilter() {
       return planet[column] === Number(valor);
     });
     setPlanetsCopia(planetsByNumber);
+    columnOptions();
   };
 
   const handleClick = () => {
