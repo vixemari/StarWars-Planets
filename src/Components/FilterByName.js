@@ -18,13 +18,17 @@ function FilterName() {
   };
 
   return (
-    <section>
+    <section
+      className="d-flex justify-content-around
+    align-items-center p-2"
+    >
       <input
         type="text"
         placeholder="Pesquisar"
         data-testid="name-filter"
         value={ filters.filterByName }
         onChange={ handleChange }
+        className="form-control"
       />
     </section>
   );

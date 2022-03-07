@@ -6,7 +6,9 @@ import FilterByNumericValues from '../Components/FilterByNumericValues';
 function Home() {
   return (
     <div>
-      <h1>StarWars Planets</h1>
+      <header className="logo-header">
+        <img className="logo" src="https://i.imgur.com/Z70vbgv.png" alt="logo" />
+      </header>
       <FilterByName />
       <FilterByNumericValues />
       <Table />
