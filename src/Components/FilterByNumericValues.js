@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import StarwarsContext from '../Provider/Context';
 
 export default function NumericFilter() {
-  const { planets, setPlanetsCopia, filters, setFilters,
+  const { planets, setPlanetsCopia, setFilters,
     column, setColumn, comparison, setComparison, valor,
     setValor, options, setOptions } = useContext(StarwarsContext);
 
@@ -28,7 +28,7 @@ export default function NumericFilter() {
 
   const handleClick = () => {
     setFilters({
-      ...filters,
+
       filterByNumericValues: [
         {
           column,

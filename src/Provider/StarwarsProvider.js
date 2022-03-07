@@ -14,6 +14,7 @@ function StarwarsProvider({ children }) {
     'diameter',
     'rotation_period',
     'surface_water',
+
   ]);
   const filter = {
     filterByName: '',

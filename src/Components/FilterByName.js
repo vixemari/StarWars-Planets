@@ -14,10 +14,7 @@ function FilterName() {
 
   const handleChange = (event) => {
     filterPlanetsByName(event.target.value);
-    setFilters({
-      ...filters,
-      filterByName: event.target.value,
-    });
+    setFilters({ filterByName: event.target.value });
   };
 
   return (
