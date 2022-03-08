@@ -41,16 +41,13 @@ export default function NumericFilter() {
   };
 
   return (
-    <div
-      className="d-flex justify-content-around
-    align-items-center p-2 mb-3"
-    >
+    <div className="input-div ">
       <select
         data-testid="column-filter"
         name="column"
         value={ column }
         onChange={ ({ target: { value } }) => setColumn(value) }
-        className="form-select form-select-sm form-control"
+        className="filter-container "
       >
         {options.map((item) => (
           <option key={ item } value={ item }>
@@ -63,7 +60,7 @@ export default function NumericFilter() {
         name="comparison"
         value={ comparison }
         onChange={ ({ target: { value } }) => setComparison(value) }
-        className="form-select form-select-sm form-control"
+        className="filter-container "
       >
         <option value="maior que">maior que</option>
         <option value="igual a">igual a</option>
@@ -74,7 +71,7 @@ export default function NumericFilter() {
         data-testid="value-filter"
         value={ valor }
         onChange={ ({ target: { value } }) => setValor(value) }
-        className="form-control"
+        className="filter-container"
       />
       <button
         type="button"

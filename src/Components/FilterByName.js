@@ -28,7 +28,7 @@ function FilterName() {
         data-testid="name-filter"
         value={ filters.filterByName }
         onChange={ handleChange }
-        className="form-control"
+        className="filters "
       />
     </section>
   );
